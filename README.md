@@ -91,10 +91,8 @@ Không phát hiện lỗi trong phạm vi kiểm thử
 Các assertion đều đạt yêu cầu
 
 ## 6. Bằng chứng thực thi
-
-Video thực thi được lưu tại:
-
-cypress-exercise/cypress/videos/
+<img width="1918" height="1078" alt="Screenshot 2026-02-28 234948" src="https://github.com/user-attachments/assets/69bd5479-034e-453c-b555-9cdc9db55d3e" />
+<img width="1918" height="1078" alt="Screenshot 2026-02-28 235005" src="https://github.com/user-attachments/assets/46debabf-0e03-41fd-8f40-191559ccba2d" />
 ## 7. Coverage kiểm thử
 Các chức năng chính của hệ thống đã được kiểm thử:
 
@@ -107,4 +105,8 @@ Coverage hiện tại tập trung vào:
 Functional E2E testing
 UI flow validation
 User interaction validation
-## BÁO CÁO KIỂM THỬ HIỆU NĂNG VỚI JMETER
+Hệ điều hành: Windows
+Công cụ: Apache JMeter 5.6.3
+Java: JDK 21
+Website kiểm thử: https://www.wikipedia.org
+
