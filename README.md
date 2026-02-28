@@ -96,17 +96,75 @@ Các assertion đều đạt yêu cầu
 ## 7. Coverage kiểm thử
 Các chức năng chính của hệ thống đã được kiểm thử:
 
+
+
 Đăng nhập người dùng
+
+
 Thao tác với giỏ hàng
+
+
 Sắp xếp danh sách sản phẩm
+
+
 Quy trình thanh toán
+
+
 Coverage hiện tại tập trung vào:
 
+
 Functional E2E testing
+
+
 UI flow validation
+
+
 User interaction validation
-Hệ điều hành: Windows
-Công cụ: Apache JMeter 5.6.3
-Java: JDK 21
-Website kiểm thử: https://www.wikipedia.org
+
+# Báo cáo kiểm thử hiệu năng với JMeter
+
+## Website kiểm thử
+- https://www.wikipedia.org
+
+## Công cụ & môi trường
+- Apache JMeter 5.6.3
+- Java 17
+- OS: Windows
+
+## Cấu hình chung
+- HTTP Request Defaults: https + www.wikipedia.org
+- HTTP Header Manager: User-Agent, Accept, Accept-Language
+- Follow Redirects: bật cho các request
+
+## Kịch bản
+
+### TG1_Basic_10users_loop5
+- Users: 10 | Ramp-up: 10s | Loop: 5 | Request: GET /
+- Kết quả (Summary Report):
+  - Avg Response Time: … ms
+  - Throughput: … req/s
+  - Error Rate: 0%
+
+### TG2_Heavy_50users_ramp30
+- Users: 50 | Ramp-up: 30s | Loop: 2 | Request: GET / + GET /wiki/Main_Page
+- Kết quả:
+  - Avg Response Time: … ms
+  - Throughput: … req/s
+  - Error Rate: … %
+
+### TG3_Custom_20users_60s
+- Users: 20 | Ramp-up: 10s | Duration: 60s | Request: 2 trang con
+- Kết quả:
+  - Avg Response Time: … ms
+  - Throughput: … req/s
+  - Error Rate: … %
+
+## Nhận xét
+- Khi tăng số users (TG2), response time thay đổi như thế nào?
+- Throughput có tăng tương ứng không?
+- Có lỗi phát sinh không? Nếu có: nguyên nhân + cách khắc phục.
+
+## File nộp
+- `Aggregate Report.jmx`
+- Ảnh chụp Summary/Aggregate trong `results/`
 
