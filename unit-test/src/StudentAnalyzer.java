@@ -21,6 +21,24 @@ public class StudentAnalyzer {
     }
 
     public double calculateValidAverage(List<Double> scores) {
-        return 0; // sẽ làm ở issue #2
+    if (scores == null || scores.isEmpty()) {
+        return 0;
     }
+
+    double sum = 0;
+    int count = 0;
+
+    for (Double score : scores) {
+        if (score != null && score >= 0 && score <= 10) {
+            sum += score;
+            count++;
+        }
+    }
+
+    if (count == 0) {
+        return 0;
+    }
+
+    return sum / count;
+}
 }
